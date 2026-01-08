@@ -41,14 +41,19 @@
                 <h2>📚 Study Hub</h2>
             </div>
             <div class="nav-actions">
+                <button id="resourcesBtn" class="icon-btn" title="Study Resources">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l-5.5 9h11z"/><circle cx="17.5" cy="17.5" r="4.5"/><path d="M3 13.5h8v8H3z"/>
+                    </svg>
+                </button>
                 <button id="newDocBtn" class="icon-btn" title="New Google Doc">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                     </svg>
                 </button>
-                <button id="aiBtn" class="icon-btn" title="AI Assistant">
+                <button id="aiBtn" class="icon-btn" title="AI Study Assistant">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
                     </svg>
                 </button>
                 <button id="backToWelcomeBtn" class="icon-btn" title="Back to Welcome">
@@ -85,6 +90,12 @@
                     </svg>
                     <span>New Slides</span>
                 </button>
+                <button class="quick-action-card" onclick="openModal('resourcesModal')">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/>
+                    </svg>
+                    <span>Resources</span>
+                </button>
             </div>
 
             <!-- Subject Planner -->
@@ -115,16 +126,70 @@
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="ai-message">
-                    <p>Hi! I'm your AI study assistant. Ask me anything about your subjects, homework, or studying tips!</p>
+                    <p>Hi! I'm your AI study assistant powered by GPT. I can help you with homework, study techniques, explanations of complex topics, and more. What would you like to know?</p>
                 </div>
             </div>
             <div class="chat-input-container">
-                <input type="text" id="chatInput" placeholder="Ask me anything..." />
+                <input type="text" id="chatInput" placeholder="Ask me anything about studying, homework, or any topic..." />
                 <button id="sendChatBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                     </svg>
                 </button>
+            </div>
+            <div style="padding: 0 2rem 1.5rem; font-size: 0.85rem; color: var(--text-secondary); text-align: center;">
+                💡 Tip: Ask specific questions for better answers!
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Modal -->
+    <div id="resourcesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📚 Study Resources</h3>
+                <button class="close-btn" onclick="closeModal('resourcesModal')">&times;</button>
+            </div>
+            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+                <div class="resource-category">
+                    <h4 style="color: #667eea; margin-bottom: 1rem; font-size: 1.25rem;">🧮 Mathematics</h4>
+                    <a href="https://www.khanacademy.org/math" target="_blank" class="resource-link">Khan Academy Math</a>
+                    <a href="https://www.wolframalpha.com/" target="_blank" class="resource-link">WolframAlpha Calculator</a>
+                    <a href="https://www.symbolab.com/" target="_blank" class="resource-link">Symbolab - Step by Step</a>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="resource-link">Desmos Graphing</a>
+                </div>
+
+                <div class="resource-category">
+                    <h4 style="color: #f093fb; margin-bottom: 1rem; font-size: 1.25rem;">📝 Writing & English</h4>
+                    <a href="https://www.grammarly.com/" target="_blank" class="resource-link">Grammarly</a>
+                    <a href="https://www.purdue owl.edu/" target="_blank" class="resource-link">Purdue OWL Writing Lab</a>
+                    <a href="https://www.hemingwayapp.com/" target="_blank" class="resource-link">Hemingway Editor</a>
+                    <a href="https://www.sparknotes.com/" target="_blank" class="resource-link">SparkNotes Literature</a>
+                </div>
+
+                <div class="resource-category">
+                    <h4 style="color: #43e97b; margin-bottom: 1rem; font-size: 1.25rem;">🔬 Science</h4>
+                    <a href="https://www.khanacademy.org/science" target="_blank" class="resource-link">Khan Academy Science</a>
+                    <a href="https://www.crash course.com/" target="_blank" class="resource-link">Crash Course Videos</a>
+                    <a href="https://phet.colorado.edu/" target="_blank" class="resource-link">PhET Simulations</a>
+                    <a href="https://www.biology online.com/" target="_blank" class="resource-link">Biology Online</a>
+                </div>
+
+                <div class="resource-category">
+                    <h4 style="color: #4facfe; margin-bottom: 1rem; font-size: 1.25rem;">🌍 History & Social Studies</h4>
+                    <a href="https://www.khanacademy.org/humanities" target="_blank" class="resource-link">Khan Academy Humanities</a>
+                    <a href="https://www.history.com/" target="_blank" class="resource-link">History Channel</a>
+                    <a href="https://www.britannica.com/" target="_blank" class="resource-link">Encyclopedia Britannica</a>
+                    <a href="https://www.coursera.org/" target="_blank" class="resource-link">Coursera</a>
+                </div>
+
+                <div class="resource-category">
+                    <h4 style="color: #f5576c; margin-bottom: 1rem; font-size: 1.25rem;">🧠 Study Tools</h4>
+                    <a href="https://quizlet.com/" target="_blank" class="resource-link">Quizlet Flashcards</a>
+                    <a href="https://www.notion.so/" target="_blank" class="resource-link">Notion Notes</a>
+                    <a href="https://www.forestapp.cc/" target="_blank" class="resource-link">Forest - Focus Timer</a>
+                    <a href="https://www.youtube.com/education" target="_blank" class="resource-link">YouTube Education</a>
+                </div>
             </div>
         </div>
     </div>
