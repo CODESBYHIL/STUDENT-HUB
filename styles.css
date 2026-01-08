@@ -25,8 +25,8 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #0f0c29;
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: #2a2a2a;
+    background: linear-gradient(to right, #3a3a3a, #2d2d2d, #252525);
     min-height: 100vh;
     color: var(--text);
     overflow-x: hidden;
@@ -61,7 +61,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4a4a4a 0%, #2d2d2d 100%);
     position: relative;
     overflow: hidden;
 }
@@ -260,7 +260,7 @@ body {
 /* Study Hub */
 #studyHub {
     flex-direction: column;
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #3a3a3a, #2d2d2d, #252525);
 }
 
 .navbar {
